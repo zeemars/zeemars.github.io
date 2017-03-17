@@ -10,8 +10,8 @@
 <script type="text/javascript">
 function changeFrameHeight(){
     var ifm= document.getElementById("Info1"); 
-    ifm.height=document.documentElement.clientHeight;
-ifm.width=document.documentElement.clientWidth;
+    ifm.height=window.innerHeight;
+ifm.width=window.innerWeight;
 }
 window.onresize=function(){  
      changeFrameHeight();  
