@@ -5,16 +5,20 @@
 </head>
 <body id="body" width="100%" height="100%">
 <style>
-	body{
-		margin: 0px;
-	}
+	body{margin:0; padding:0;}
 </style>
 <script type="text/javascript">
-    document.getElementsByTagName('body')[0].style.height = window.innerHeight-5+'px';
-    document.getElementsByTagName('body')[0].style.width = window.innerWidth-5+'px';
-</script>
+function changeFrameHeight(){
+    var ifm= document.getElementById("Info1"); 
+    ifm.height=document.documentElement.clientHeight;
+ifm.width=document.documentElement.clientWidth;
+}
+window.onresize=function(){  
+     changeFrameHeight();  
+} 
+	</script>
     <!--iframe的高度设置为父元素的高度即可实现高度自适应-->
     <!--这边以body为父元素，当然也可以以div之类的元素为父元素-->
-    <iframe name="Info1" id="Info1" src="http://wfphcn.iask.in:801/rs/" onload="this.height=body.offsetHeight;this.width=body.offsetWidth" scrolling="true" frameborder="0"></iframe>
+    <iframe name="Info1" id="Info1" src="http://wfphcn.iask.in:801/rs/" onload="changeFrameHeight()" scrolling="true"  frameborder="0"></iframe>
 </body>
 </html>
