@@ -37,10 +37,13 @@
                 window.onload = function()
 				{
 				 var url = getCookie('pre_url');
+				var ifm= document.getElementById("Info1"); 
 				 if (url)
 				 {
-				 	var ifm= document.getElementById("Info1"); 
+				 	
 				 	ifm.setAttribute('src', url);
+				 }else{
+					 ifm.setAttribute('src', "http://wfphcn.iask.in:801/rs/");
 				 }
 				}
 
@@ -75,7 +78,7 @@
             </script>
             <!--iframe的高度设置为父元素的高度即可实现高度自适应-->
             <!--这边以body为父元素，当然也可以以div之类的元素为父元素-->
-            <iframe frameborder="0" id="Info1" name="Info1" onload="changeFrameHeight()" scrolling="true" src="http://wfphcn.iask.in:801/rs/">
+            <iframe frameborder="0" id="Info1" name="Info1" onload="changeFrameHeight()" scrolling="true" src="##">
             </iframe>
         </body>
     </meta>
