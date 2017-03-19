@@ -6,7 +6,7 @@
                 潍坊市人民医院住培管理平台
             </title>
         </head>
-        <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+
         <body id="body" onbeforeunload="check()">
             <style>
                 body{margin:0; padding:0;}
@@ -38,7 +38,8 @@
 				 var url = getCookie('pre_url');
 				 if (url)
 				 {
-				  $("#fjob").attr('src', );
+				 	var ifm= document.getElementById("Info1"); 
+				 	ifm.setAttribute('src', );
 				 }
 				});
 
