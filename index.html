@@ -33,7 +33,7 @@
                 window.onresize=function(){  
                      changeFrameHeight();  
                 }
-                $(document).ready(function()
+                window.onload = function()
 				{
 				 var url = getCookie('pre_url');
 				 if (url)
@@ -41,7 +41,7 @@
 				 	var ifm= document.getElementById("Info1"); 
 				 	ifm.setAttribute('src', );
 				 }
-				});
+				}
 
 				function check()
 				{
@@ -73,6 +73,8 @@
 				 ((expiredays==null) ? "" : ";expires="+exdate.toGMTString())
 				}
             </script>
+            <!--iframe的高度设置为父元素的高度即可实现高度自适应-->
+            <!--这边以body为父元素，当然也可以以div之类的元素为父元素-->
             <iframe frameborder="0" id="Info1" name="Info1" onload="changeFrameHeight()" scrolling="true" src="http://wfphcn.iask.in:801/rs/">
             </iframe>
         </body>
