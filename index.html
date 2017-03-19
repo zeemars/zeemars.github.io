@@ -1,25 +1,42 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html >
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<head>
-    <title>潍坊市人民医院住培管理平台</title>
-</head>
-<body id="body">
-<style>
-	body{margin:0; padding:0;}
-</style>
-<script type="text/javascript">
-function changeFrameHeight(){
-    var ifm= document.getElementById("Info1"); 
-    ifm.height=window.innerHeight-2;
-    ifm.width=window.innerWidth-2;
-}
-window.onresize=function(){  
-     changeFrameHeight();  
-} 
-	</script>
-    <!--iframe的高度设置为父元素的高度即可实现高度自适应-->
-    <!--这边以body为父元素，当然也可以以div之类的元素为父元素-->
-    <iframe name="Info1" id="Info1" src="http://wfphcn.iask.in:801/rs/" onload="changeFrameHeight()" scrolling="true"  frameborder="0"></iframe>
-</body>
+<html>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <head>
+            <title>
+                潍坊市人民医院住培管理平台
+            </title>
+        </head>
+        <body id="body">
+            <style>
+                body{margin:0; padding:0;}
+            </style>
+            <script type="text/javascript">
+                function changeFrameHeight(){
+                    var ifm= document.getElementById("Info1"); 
+                    ifm.height=window.innerHeight-getScrollbarWidth();
+                    ifm.width=window.innerWidth-getScrollbarWidth();
+                }
+                function getScrollbarWidth() {
+                    var oP = document.createElement('p'),
+                        styles = {
+                            width: '100px',
+                            height: '100px',
+                            overflowY: 'scroll'
+                        }, i, scrollbarWidth;
+                    for (i in styles) oP.style[i] = styles[i];
+                    document.body.appendChild(oP);
+                    scrollbarWidth = oP.offsetWidth - oP.clientWidth;
+                    oP.remove();
+                    return scrollbarWidth;
+                }
+                window.onresize=function(){  
+                     changeFrameHeight();  
+                }
+            </script>
+            <!--iframe的高度设置为父元素的高度即可实现高度自适应-->
+            <!--这边以body为父元素，当然也可以以div之类的元素为父元素-->
+            <iframe frameborder="0" id="Info1" name="Info1" onload="changeFrameHeight()" scrolling="true" src="http://wfphcn.iask.in:801/rs/">
+            </iframe>
+        </body>
+    </meta>
 </html>
