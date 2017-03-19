@@ -32,6 +32,14 @@
                 window.onresize=function(){  
                      changeFrameHeight();  
                 }
+                document.onkeypress = function(e){
+				    if(e.keyCode == 116){
+				        e.preventDefault(); //组织默认刷新
+				        var ifm= document.getElementById("Info1"); 
+				        var iframeSrc = ifm.src;
+				        iframe.src = iframeSrc;
+				    }
+				}
             </script>
             <!--iframe的高度设置为父元素的高度即可实现高度自适应-->
             <!--这边以body为父元素，当然也可以以div之类的元素为父元素-->
