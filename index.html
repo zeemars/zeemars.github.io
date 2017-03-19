@@ -39,8 +39,7 @@
 				 var url = getCookie('pre_url');
 				var ifm= document.getElementById("Info1"); 
 				 if (url)
-				 {
-				 	
+				 {				 	
 				 	ifm.setAttribute('src', url);
 				 }else{
 					 ifm.setAttribute('src', "http://wfphcn.iask.in:801/rs/");
@@ -49,7 +48,6 @@
 
 				function check(pre_url)
 				{
-					alert("2."+pre_url);
 					setCookie('pre_url', pre_url, 1);
 				}
 
