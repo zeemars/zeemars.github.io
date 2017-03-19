@@ -12,7 +12,10 @@
 }
 window.onload = function(){
     var url = GetQueryString("url");
-    parent.parent.check(url); // execute main function 
+    try{
+        parent.parent.check(url); // execute main function 
+    }catch(e){
+    }
     alert("1."+url);
 }
 </script>
