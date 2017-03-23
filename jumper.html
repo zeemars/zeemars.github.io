@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <head>
+            <title>
+                潍坊市人民医院住培管理平台
+            </title>
+        </head>
+	<script src="./base64.js"></script>
+  <script>
+    function GetQueryString(name)
+    {
+         var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+         var r = window.location.search.substr(1).match(reg);
+         if(r!=null)return  unescape(r[2]); return null;
+    }
+    function setCookie(c_name,value,expiredays)
+				{
+				 var exdate=new Date()
+				 exdate.setDate(exdate.getDate()+expiredays)
+				 document.cookie=c_name+ "=" +escape(value)+
+				 ((expiredays==null) ? "" : ";expires="+exdate.toGMTString())
+				}
+    setCookie('a','a',3600);
+    window.location.href = Base64.decode(GetQueryString('url'));
+  </script>
+        <body id="body">
+        </body>
+</html>
