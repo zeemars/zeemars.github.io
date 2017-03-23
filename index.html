@@ -6,7 +6,7 @@
                 潍坊市人民医院住培管理平台
             </title>
         </head>
-
+	<script src="./base64.js"></script>
         <body id="body">
             <style>
                 body{margin:0; padding:0;}
@@ -40,9 +40,9 @@
 				var ifm= document.getElementById("Info1"); 
 				 if (url)
 				 {				 	
-				 	ifm.setAttribute('src', url);
+				 	ifm.setAttribute('src', './jumper.html?url='+Base64.encode(url));
 				 }else{
-					 ifm.setAttribute('src', "http://wfphcn.iask.in:801/rs/");
+					 ifm.setAttribute('src', './jumper.html?url='+Base64.encode("http://wfphcn.iask.in:801/rs/"));
 				 }
 				}
 
