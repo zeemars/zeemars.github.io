@@ -42,7 +42,7 @@
 			//判断是否ios
 			var u = navigator.userAgent;
 			var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
-			if(isiOs){
+			if(isiOS){
 				var body=document.getElementById("body");//删去iframe			
 				body.removeChild(ifm);
 				var xmlhttp = new ActiveXObject("MSXML2.XMLHTTP.3.0");
