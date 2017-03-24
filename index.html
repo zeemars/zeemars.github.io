@@ -45,17 +45,7 @@
 			if(isiOS){
 				var body=document.getElementById("body");//删去iframe			
 				body.removeChild(ifm);
-				var xmlhttp = new ActiveXObject("MSXML2.XMLHTTP.3.0");
-			 xmlhttp.open("post",mainUrl,false);
-			    xmlhttp.onreadystatechange= HandleStateChange;
-			    xmlhttp.send();
-			    function HandleStateChange()
-			    {
-			      if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
-			      {
-				  document.write(xmlhttp.responseText);
-			      }
-			    }
+				window.location.href = mainUrl;
 			}else{			
 				 
 				if (url)
