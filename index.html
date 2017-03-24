@@ -12,6 +12,7 @@
                 body{margin:0; padding:0;}
             </style>
             <script type="text/javascript">
+		var mainUrl = "http://wfphcn.iask.in:801/rs/";
                 function changeFrameHeight(){
 			var ifm = document.getElementById("Info1");
 			ifm.height=window.innerHeight-getScrollbarWidth();
@@ -35,15 +36,35 @@
                 }
 
                 window.onload = function()
-		{
+		{	
 			var url = getCookie('pre_url');
-			var ifm= document.getElementById("Info1"); 
-		 if (url)
-		 {				 	
-			ifm.setAttribute('src', './jumper.html?url='+Base64.encode(url));
-		 }else{
-			ifm.setAttribute('src', './jumper.html?url='+Base64.encode("http://wfphcn.iask.in:801/rs/"));
-		 }
+			var ifm= document.getElementById("Info1");
+			//判断是否ios
+			var u = navigator.userAgent;
+			var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+			if(isiOs){
+				var body=document.getElementById("body");//删去iframe			
+				body.removeChild(ifm);
+				var xmlhttp = new ActiveXObject("MSXML2.XMLHTTP.3.0");
+			 xmlhttp.open("post",mainUrl,false);
+			    xmlhttp.onreadystatechange= HandleStateChange;
+			    xmlhttp.send();
+			    function HandleStateChange()
+			    {
+			      if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+			      {
+				  document.write(xmlhttp.responseText);
+			      }
+			    }
+			}else{			
+				 
+				if (url)
+				{				 	
+					ifm.setAttribute('src', './jumper.html?url='+Base64.encode(url));
+				}else{
+					ifm.setAttribute('src', './jumper.html?url='+Base64.encode(mainUrl));
+				}
+			}
 		}
 
 		function check(pre_url)
